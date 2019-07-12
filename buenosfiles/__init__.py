@@ -1,9 +1,7 @@
 from flask import Flask
-from buenosfiles.config import Config
 
-def create_app(config_class=Config):
+def create_app():
     app = Flask(__name__)
-    app.config.from_object(Config)
 
     from buenosfiles.errors.handlers import errors
     from buenosfiles.ultimos.routes import ultimos
