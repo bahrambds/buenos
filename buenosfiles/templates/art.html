@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+{% block content %}
+    {% for a in art %}
+        <img class="img-fluid mx-auto d-block" src="{{ a[7] }}">
+        <article class="media content-section">
+                <div class="media-body">
+                <div class="article-metadata">
+                    <a class="mr-4" href="{{ a[6] }}">de: {{ query }}</a>
+                    <a class="mr-4" href="{{ a[6] }}">por: {{ a[4] }}</a>
+                    <small class="text-muted float-right">{{ a[3] }}</small>
+                </div>
+                <h2><a class="article-title" href="{{ a[6] }}">{{ a[1] }}</a></h2>
+                <p class="article-content">{{ a[8] }}</p>      
+            </div>
+        </article>
+    {% endfor %}
+{% endblock content %}

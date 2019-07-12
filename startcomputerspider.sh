@@ -1,0 +1,1 @@
+source ~/vmbuenos/venv/bin/activate && cd ~/vmbuenos/project/espapis && python tech_computerhoy.py  && cd ~/vmbuenos/project/spiderbuenos/spiderbuenos && scrapy crawl computer -o temp/computer.json && python computerpipe.py 
