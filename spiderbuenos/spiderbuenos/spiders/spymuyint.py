@@ -9,7 +9,7 @@ class spyd3rMuyint(scrapy.Spider):
     name = 'spymuyint'
     start_urls=[]
     for i in range(1):
-        start_urls.append(f'https://www.muyinteresante.es/tecnologia/{i}')
+        start_urls.append(f'https://www.muyinteresante.es/naturaleza/{i}')
 
     def __init__(self): # Constructor for our class
         # Since we did our own constructor we need to call the parents constructor
