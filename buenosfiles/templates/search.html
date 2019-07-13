@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 {% block content %}
-    <h1>Busca: {{ query }}</h1> 
+    <h1>Busca:</h1> 
     {% for art in searchquery %}
         <article class="media content-section">
 		<img class="rounded-circle article-img mt-5" src="{{art[7]}}">
