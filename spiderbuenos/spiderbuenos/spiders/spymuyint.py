@@ -8,7 +8,7 @@ from datetime import datetime
 class spyd3rMuyint(scrapy.Spider):
     name = 'spymuyint'
     start_urls=[]
-    for i in range(1):
+    for i in range(1, 2):
         start_urls.append(f'https://www.muyinteresante.es/naturaleza/{i}')
 
     def __init__(self): # Constructor for our class
