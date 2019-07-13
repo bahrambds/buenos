@@ -1,4 +1,5 @@
 from flask import Flask
+from buenosfiles.config import Config
 
 def create_app():
     app = Flask(__name__)
@@ -14,6 +15,7 @@ def create_app():
     app.register_blueprint(about)
     app.register_blueprint(errors)
     app.register_blueprint(ultimos)
+    app.register_blueprint(curiosidades)
     app.register_blueprint(tech)
 
 
