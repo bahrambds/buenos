@@ -28,10 +28,11 @@ class spyd3rMuyint(scrapy.Spider):
 
         items['source_name'] = response.xpath('//*[@rel="canonical"]/@href').get().split('www.')[1].split('.es')[0]
         items['description'] = response.xpath('string(//*[@class="article--summary"])').get()
-        content = []
+        longcontent = []
         for i in range(20):
-            content.append(response.xpath(f'string(//*[@id="paragraph_{i}"])').getall()) 
-        items['content'] = [x for x in content if x != ['']]
+            longcontent.append(response.xpath(f'string(//*[@id="paragraph_{i}"])').getall()) 
+        clean_content = longcontent
+        items['content'] = clean_content
         items['title'] = response.xpath('string(//*[@class="article--title"])').get()
         items['url'] = response.xpath('//*[@property="og:url"]/@content').get()
         items['img_url'] = response.xpath('//*[@class="imgContent pull-center"]/@src').get()
