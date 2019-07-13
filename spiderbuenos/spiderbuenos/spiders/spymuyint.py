@@ -31,7 +31,7 @@ class spyd3rMuyint(scrapy.Spider):
         content = []
         for i in range(20):
             content.append(response.xpath(f'string(//*[@id="paragraph_{i}"])').getall()) 
-        items['content'] = content
+        items['content'] = [x for x in content if x != '[""]']
         items['title'] = response.xpath('string(//*[@class="article--title"])').get()
         items['url'] = response.xpath('//*[@property="og:url"]/@content').get()
         items['img_url'] = response.xpath('//*[@class="imgContent pull-center"]/@src').get()
