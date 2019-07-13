@@ -15,6 +15,7 @@ def create_app(config_class=Config):
     app.register_blueprint(about)
     app.register_blueprint(errors)
     app.register_blueprint(ultimos)
+    app.register_blueprint(curiosidades)
     app.register_blueprint(tech)
 
 
