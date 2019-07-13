@@ -16,8 +16,8 @@ for i in range(len_range):
 def get_tech():
     return render_template('cat/tech.html', title='Tech', articles=articles)
 
-# @tech.route("/tech/<int:art_id>")
-# def get_tech_art(art_id): 
-#     cur.execute(f"SELECT * FROM tech where art_id={art_id};")
-#     art = cur.fetchall()
-#     return render_template('cat/tech_art.html', title='Tech', art=art)
+@tech.route("/tech/<int:art_id>")
+def get_tech_art(art_id): 
+    cur.execute(f"SELECT * FROM tech where art_id={art_id};")
+    art = cur.fetchall()
+    return render_template('cat/tech_art.html', title='Tech', art=art)
