@@ -21,4 +21,4 @@ def get_curiosidades():
 def get_curiosidades_art(art_id): 
     cur.execute(f"SELECT * FROM curiosidades where art_id={art_id};")
     art = cur.fetchall()
-    return render_template('cat/curiosidades_art.html', title='Curiosidades', art=art)
+    return render_template('art.html', title='Curiosidades', art=art)
