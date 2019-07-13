@@ -7,7 +7,7 @@ with open('temp/spymuyint.json') as json_file:
 for i in data:
     conn = psycopg2.connect("dbname=article-database user=bb")
     cur = conn.cursor()
-    content = i['content'].replace("'","").replace("\\t","\n").replace("\\n","").replace("\\r","\n\n").replace("\\xa0","").replace('                                                                                                                      \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                                                                    \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n', '\t').replace('\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                                                                                                   \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n', '\t')
+    content = i['content'].replace("'","").replace("\\t","\n").replace("\\n","").replace("\\r","\n\n").replace("\\xa0","").replace('                                                                                                                      \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                                                                    \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n', '\t').replace('\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                                                                                                   \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n', '\t').replace('\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                                                                                                   \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n', '\t').replace('\n\n\n\n\n\n\n\n\n\n\n\n\n\n', '\t').replace('\n\n\n\n\n\n\n', '\t')
     url = i['url']
     title = i['title'].replace("'","")
     img_url = i['img_url']
