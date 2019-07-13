@@ -1,6 +1,7 @@
 from flask import Flask
+from buenosfiles.config import Config
 
-def create_app():
+def create_app(config_class=Config):
     app = Flask(__name__)
 
     from buenosfiles.errors.handlers import errors
