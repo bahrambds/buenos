@@ -14,7 +14,7 @@ commands = (
         alter TABLE all_art add column all_id int generated always as identity;
         """,
         """
-        insert into all_art (art_id, title, description, date_published, author, source_name, url, img_url, content)((select * from tech) union all (select * from curiosidades))  order by date_published desc ;
+        insert into all_art (art_id, title, description, date_published, author, source_name, url, img_url, content)((select * from tech) union all (select * from naturaleza))  order by date_published desc ;
         """,
         """
         create index tit_idx on all_art using gin(to_tsvector('english', title));

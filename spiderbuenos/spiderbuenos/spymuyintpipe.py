@@ -17,7 +17,7 @@ for i in data:
     date_published = i['date-published']
         
 try:
-    cur.execute(f"insert into curiosidades(title, content, url, img_url, source_name, description, author, date_published) values('{title}','{content}','{url}','{img_url}','{source_name}','{description}','{author}', '{date_published}');")
+    cur.execute(f"insert into naturaleza(title, content, url, img_url, source_name, description, author, date_published) values('{title}','{content}','{url}','{img_url}','{source_name}','{description}','{author}', '{date_published}');")
 except (Exception, psycopg2.DatabaseError) as error:
     print(error)
 conn.commit()
