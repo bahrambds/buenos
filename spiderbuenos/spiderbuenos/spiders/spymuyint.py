@@ -31,7 +31,7 @@ class spyd3rMuyint(scrapy.Spider):
         longcontent = []
         for i in range(20):
             longcontent.append(response.xpath(f'string(//*[@id="paragraph_{i}"])').getall()) 
-        clean_content = content.replace("'","").replace(", ['']", "").replace('[','').replace(']','')
+        clean_content = longcontent.replace("'","").replace(", ['']", "").replace('[','').replace(']','')
         items['content'] = clean_content
         items['title'] = response.xpath('string(//*[@class="article--title"])').get()
         items['url'] = response.xpath('//*[@property="og:url"]/@content').get()
