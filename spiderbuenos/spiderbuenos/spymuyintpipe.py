@@ -1,14 +1,13 @@
 import json
 import psycopg2
 
-with open('spymuyint.json') as json_file:
+with open('temp/spymuyint.json') as json_file:
     data = json.load(json_file)
 
 for i in data:
     conn = psycopg2.connect("dbname=article-database user=bb")
     cur = conn.cursor()
-    spaced_content = i['content'].replace("'","").replace("\\t","\n").replace("\\n","").replace("\\r","\n\n").replace("\\xa0","")
-    content = " ".join(spaced_content.split())
+    content = i['content'].replace("'","").replace("\\t","\n").replace("\\n","").replace("\\r","\n\n").replace("\\xa0","").replace('                                                                                                                      \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                                                                    \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n', '\t').replace('\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                                                                                                   \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n', '\t')
     url = i['url']
     title = i['title'].replace("'","")
     img_url = i['img_url']
