@@ -15,10 +15,10 @@ for i in range(len_range):
 
 @naturaleza.route("/naturaleza")
 def get_naturaleza():
-    return render_template('cat/naturaleza.html', title='naturaleza', articles=articles)
+    return render_template('cat/naturaleza.html', title='Naturaleza', articles=articles)
 
 @naturaleza.route("/naturaleza/<int:art_id>")
 def naturaleza_art(art_id): 
     cur.execute(f"SELECT * FROM naturaleza where art_id={art_id};")
     art = cur.fetchall()
-    return render_template('art.html', title='naturaleza', art=art)
+    return render_template('art.html', title='Naturaleza', art=art)

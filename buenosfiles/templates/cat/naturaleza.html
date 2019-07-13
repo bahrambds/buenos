@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 {% block content %}
-    <h1>naturaleza</h1> 
+    <h1>Naturaleza</h1> 
     {% for art in articles %}
         <article class="media content-section">
                 <img class="rounded-circle article-img mt-5" src="{{ art[7] }}">
@@ -9,7 +9,7 @@
                     <a class="mr-4" href="{{ art[6] }}">de: {{ art[5] }}</a>
                     <small class="text-muted float-right">{{ art[3] }}</small>
                 </div> 
-                <h2><a class="article-title" href="{{url_for('naturaleza.get_naturaleza_art', art_id=art[0])}}">{{ art[1] }}</a></h2>
+                <h2><a class="article-title" href="{{url_for('naturaleza.naturaleza_art', art_id=art[0])}}">{{ art[1] }}</a></h2>
                 <p class="article-content">{{ art[2] }}</p>      
             </div>
         </article>
