@@ -1,1 +1,1 @@
-source ~/vmbuenos/venv/bin/activate && cd ~/vmbuenos/project/spiderbuenos/spiderbuenos && scrapy crawl spymuyint -o spymuyint.json && python spymuyintpipe.py && supervisorctl reload
+source ~/buenos/venv/bin/activate && cd ~/buenos/spiderbuenos/spiderbuenos && scrapy crawl spymuyint -o spymuyint.json && python spymuyintpipe.py
