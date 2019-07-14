@@ -28,7 +28,7 @@ class spiderComputer(scrapy.Spider):
         items = buenosItem()
         
         items['href'] = response.xpath('//*[@rel="canonical"]/@href').get()
-        items['content']  = response.xpath('string(//*[@class="block-roba-list"])').get().replace("'","`").replace(u'\u2013',' ').replace(u'\u00f3','ó').replace(u'\u00e9','é').replace(u'\u00e1','á').replace(u'\u201c','"').replace(u'\u00f1','ñ').replace(u'\u201d','"').replace(u'\u00fa','ú').replace(u'\u20ac','%').replace(u'\u00ed','í').replace(u'\u00a0','\n').replace(u'\u00bf','¿').replace(u'\u2014',' ').replace(u'\u00a1',' ').replace(u'\u2026',' ').replace(u'\u00ba', ' ')
+        items['content']  = response.xpath('string(//*[@class="block-roba-list"])').get().replace("'","`").replace('\\n','').replace(u'\u2013',' ').replace(u'\u00f3','ó').replace(u'\u00e9','é').replace(u'\u00e1','á').replace(u'\u201c','"').replace(u'\u00f1','ñ').replace(u'\u201d','"').replace(u'\u00fa','ú').replace(u'\u20ac','%').replace(u'\u00ed','í').replace(u'\u00a0','\n').replace(u'\u00bf','¿').replace(u'\u2014',' ').replace(u'\u00a1',' ').replace(u'\u2026',' ').replace(u'\u00ba', ' ')
         yield items
     
     
