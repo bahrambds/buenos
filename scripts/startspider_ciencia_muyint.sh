@@ -1,1 +1,1 @@
-source ~/buenos/venv/bin/activate && cd ~/buenos/spiderbuenos/spiderbuenos && scrapy crawl spymuyint -o temp/spymuyint.json && python spymuyintpipe.py && rm -r temp
+source ~/buenos/venv/bin/activate && cd ~/buenos/spiderbuenos/spiderbuenos && scrapy crawl spymuyint -o temp/spymuyint.json && python spymuyintpipe.py && rm -r temp && cd ~/buenos/scripts && python act_ultimos.py
