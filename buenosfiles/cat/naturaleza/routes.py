@@ -7,7 +7,7 @@ conn = psycopg2.connect("dbname=article-database user=bb")
 cur = conn.cursor()
 cur.execute("SELECT art_id FROM naturaleza;") 
 len_range = len(cur.fetchall())
-cur.execute("SELECT * FROM naturaleza order by date_published desc;") 
+cur.execute("SELECT art_id, title, description, date_published, author, source_name, url, coalesce(nullif(img_url, 'None'), 'https://estaticos.muyinteresante.es/media/cache/760x570_thumb/uploads/images/article/5cff5c385bafe8165cfb8250/plantas-extincion_0.jpg') FROM naturaleza order by date_published desc;") 
 articles = []
 for i in range(len_range): 
     articles.append(cur.fetchone())

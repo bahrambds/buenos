@@ -2,7 +2,7 @@ import requests
 import psycopg2
 newsapi = '4bd245502f3d4faaa85b68353b44010e'
 
-url = f'https://newsapi.org/v2/everything?domains=computerhoy.com&pageSize=5&apiKey={newsapi}'
+url = f'https://newsapi.org/v2/everything?domains=computerhoy.com&pageSize=30&apiKey={newsapi}'
 response = requests.get(url).json()
 
 for art in response["articles"]: 
