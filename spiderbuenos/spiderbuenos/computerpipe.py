@@ -1,7 +1,7 @@
 import json
 import psycopg2
 
-with open('computer.json') as json_file:
+with open('temp/computer.json') as json_file:
     data = json.load(json_file)
 
     for i in data:
