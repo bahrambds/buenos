@@ -10,12 +10,12 @@ with open('temp/computer.json') as json_file:
         content = i['content']
         href = i['href']
 
-    try:
-        cur.execute(f"update tech set content = '{content}' where url = '{href}';")
-    except (Exception, psycopg2.DatabaseError) as error:
-        print(error)
-    conn.commit()
-    conn.close()
+        try:
+            cur.execute(f"update tech set content = '{content}' where url = '{href}';")
+        except (Exception, psycopg2.DatabaseError) as error:
+            print(error)
+        conn.commit()
+        conn.close()
 
 
 
